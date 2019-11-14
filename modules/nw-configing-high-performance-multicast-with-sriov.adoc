@@ -4,11 +4,11 @@
 
 = About high performance multicast
 
-Openshift SDN support the multicast between Pods on the default network, however
-that is best used for low-bandwidth coordination or service discovery, and not a 
-high-bandwidth solution. For applications of streaming media, such as IPTV and
-multipoint videoconferencing, you can utilize SR-IOV to provide near-native 
-performance.
+Openshift SDN supports multicast traffic between pods over the default 
+pod-to-pod network, however it is best suited for lower bandwidth applications
+or service discovery. For high bandwidth streaming media, such as IPTV and
+multipoint videoconferencing, SR-IOV can be utilized to provide bandwidth
+rates which nearly match the native performance of hardware devices.
 
 When using SRIOV additional interface for multicast:
 
