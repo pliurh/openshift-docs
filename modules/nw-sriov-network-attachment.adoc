@@ -52,10 +52,10 @@ spec:
 <6> Replace `<sriov_resource_name>` with the value for the `.spec.resourceName` parameter from the SriovNetworkNodePolicy CR that defines the SR-IOV hardware for this additional network.
 <7> Optional. Replace `<link_state>` with a the link state of VF. Allowed value are `enable`, `disable` and `auto`. The default value is `auto`.
 <8> Optional. Replace `<max_tx_rate>` with a Maximum tx rate, in Mbps, for the VF. The default value is `0` (no rate limiting)
-<9> Optional. Replace `<min_tx_rate>` with a Minimum tx rate, in Mbps, for the VF. it should not larger than the `maxTxRate`. The default value is `0` (no rate limiting)
+<9> Optional. Replace `<min_tx_rate>`` with a Minimum tx rate, in Mbps, for the VF. This value should always be less than or equal to Maximum tx rate. The default value is 0 (no rate limiting)
 <10> Optional. Replace `<vlan_qos>` with a IEEE 802.1p Priority levels for the VF. The default value is `0`.
-<11> Optional. Replace `<spoof_check>` with the spoof check mode of the VF. Allowed value are `on` and `off`. The default value is `on`.
-<12> Optional. Replace `<trust_vf>` with the trust mode of the VF. Allowed value are `on` and `off`. The default value is `off`.
+<11> Optional. Replace `<spoof_check>` with the spoof check mode of the VF. Allowed values are `on` and `off`. The default value is `on`.
+<12> Optional. Replace `<trust_vf>` with the trust mode of the VF. Allowed values are `on` and `off`. The default value is `off`.
 <13> Optional. Replace `<capabilities>` with the capabilities to be configured for this network. Capabilities supported: (mac|ips), e.g. `'{"mac": true}'`, it allows SR-IOV CNI to set a static mac address to a Pod. More information can be found [TODO:[put a link to Static IP/MAC address assignment doc.]]
 
 . Create the CR by running the following command:
