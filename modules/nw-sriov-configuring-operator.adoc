@@ -12,8 +12,8 @@ SriovOperatorConfig Custom Resource (CR).
 [NOTE]
 =====
 There is one Custom Resource of SriovOperatorConfig being created when the
-operator is up. User shall change the operator config by modify this pre-created
-Custom Resource.
+operator is up. User shall change the operator config by modifying this 
+pre-created Custom Resource.
 =====
 
 == Disabling Network Resource Injector
@@ -41,12 +41,12 @@ oc patch sriovoperatorconfig default --patch '{ "spec": { "enableInjector": fals
 ----
 
 == Disabling SRIOV Operator Admission Control Webhook
-The SRIOV Operator Admission Control Webhook a Kubernetes Dynamic 
+The SRIOV Operator Admission Control Webhook is a Kubernetes Dynamic 
 Admission Controller application that:
 
-* Validating the SriovNetworkNodePolicy Custom Resource when it being created or
+* Validates the SriovNetworkNodePolicy Custom Resource when it being created or
 updated.
-* Mutating the SriovNetworkNodePolicy Custom Resource by setting the default 
+* Mutates the SriovNetworkNodePolicy Custom Resource by setting the default 
 value to `priority` and `deviceType` when it being created or updated.
 
 By default the SRIOV Operator Admission Control Webhook will be enabled by the
@@ -68,8 +68,8 @@ oc patch sriovoperatorconfig default --patch '{ "spec": { "enableOperatorWebhook
 
 == Configuring Custom NodeSelector for SRIOV Network Config Daemon
 
-The SRIOV Network Config Daemon is in charge of discover and config the SRIOV
-network devices on the nodes.
+The SRIOV Network Config Daemon is in charge of discovering and configuring the
+SRIOV network devices on the nodes.
 
 By default, it will be deployed to all the `worker` nodes in the cluster. You
 can follow this procedure to select the nodes, where the SRIOV Network Config
