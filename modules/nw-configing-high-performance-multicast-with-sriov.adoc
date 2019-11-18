@@ -25,6 +25,7 @@ Take following procedure as an example.
 
 * Install the OpenShift Command-line Interface (CLI), commonly known as `oc`.
 * You must log in to the cluster with a user that has the `cluster-admin` role.
+* You must have installed the SR-IOV Operator.
 
 .Procedure
 . Create a SriovNetworkNodePolicy CR
@@ -73,7 +74,7 @@ spec:
     } 
   resourceName: example
 ----
-<1> Make sure to provision the following default routes through your DHCP server
+<1> Make sure to provision the following static routes through your DHCP server
 224.0.0.0/5, 232.0.0.0/5, if you choose to use DHCP as IPAM. This is to override
 the static multicast route set by Openshift-SDN.
 
@@ -87,7 +88,7 @@ metadata:
   name: testpmd
   namespace: default
   annotations:
-    k8s.v1.cni.cncf.io/networks: nic1
+    k8s.v1.cni.cncf.io/networks: net-example
 spec:
   containers:
   - name: example 
