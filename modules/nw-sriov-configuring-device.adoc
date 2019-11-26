@@ -56,7 +56,7 @@ spec:
 Only SR-IOV network devices on selected nodes will be configured. The SR-IOV
 CNI plug-in and device plug-in will be only deployed on selected nodes.
 <5> Optional. Specify an integer value between `0` and `99`. A larger number gets lower priority, so a priority of `99` is lower than a priority of `10`. The default value is `99`.
-<6> Optional. Specify a value for the maximum transmission unit (MTU) of the virtual function. The value for MTU must be in the range from `1` to `9000`.
+<6> Optional. Specify a value for the maximum transmission unit (MTU) of the virtual function. The max mtu value may vary for different NIC models.
 <7> Specify the number of the virtual functions (VF) to create for the SR-IOV physical network device. For an Intel Network Interface Card (NIC), the number of VFs cannot be larger than the total VFs supported by the device. For a Mellanox NIC, the number of VFs cannot be larger than `128`.
 <8> The `nicSelector` mapping selects the Ethernet device for the Operator to configure. You do not need to specify values for all the parameters. It is recommended to identify the Ethernet adapter with enough precision to minimize the possibility of selecting an Ethernet device unintentionally.
 If you specify `rootDevices`, you must also specify a value for `vendor`, `deviceID`, or `pfName`.
